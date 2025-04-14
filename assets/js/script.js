@@ -1,3 +1,16 @@
+// toggle menu   
+const toggleButtons = document.querySelectorAll(".toggle_menu");
+const bodyElement=document.body;
+toggleButtons.forEach(button => {
+    button.addEventListener("click", function() {
+        if (bodyElement.classList.contains("show__menu")) {
+            bodyElement.classList.remove("show__menu");
+        } else {
+            bodyElement.classList.add("show__menu");
+        }
+    });
+});
+
 // Toggle Chat Widget
 document.getElementById('chatToggle').addEventListener('click', function() {
     const widget = document.getElementById('chatWidget');
@@ -18,10 +31,10 @@ document.getElementById('chatInput').addEventListener('keypress', function(e) {
 function sendMessage() {
     const input = document.getElementById('chatInput');
     const message = input.value.trim();
-    
+
     if (message) {
         const chatMessages = document.getElementById('chatMessages');
-        
+
         // Add user message
         chatMessages.innerHTML += `
             <div class="flex justify-end mb-3">
@@ -30,17 +43,17 @@ function sendMessage() {
                 </div>
             </div>
         `;
-        
+
         // Clear input
         input.value = '';
-        
+
         // Scroll to bottom
         chatMessages.scrollTop = chatMessages.scrollHeight;
-        
+
         // Simulate response (in real implementation, this would call an API)
         setTimeout(() => {
             let response = "I'm analyzing your question about Connecticut homeowner strategies. Can you provide more specific details about what you'd like to know?";
-            
+
             // Simple keyword matching for demo purposes
             if (message.toLowerCase().includes('tax')) {
                 response = "Connecticut property tax strategies are a key part of our homeowner outreach. We target properties with high tax burdens and offer solutions that can provide immediate relief through our acquisition program.";
@@ -51,7 +64,7 @@ function sendMessage() {
             } else if (message.toLowerCase().includes('conversion') || message.toLowerCase().includes('rate') || message.toLowerCase().includes('results')) {
                 response = "Our Connecticut campaigns currently convert at 5.2% from initial contact to acquisition, with an average discount of 26% below ARV. The average time from first SMS to closing is 19 days.";
             }
-            
+
             chatMessages.innerHTML += `
                 <div class="flex mb-3">
                     <div class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white flex-shrink-0 mr-2">
@@ -62,7 +75,7 @@ function sendMessage() {
                     </div>
                 </div>
             `;
-            
+
             // Scroll to bottom
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }, 1000);
@@ -108,7 +121,7 @@ window.addEventListener('load', function() {
             cutout: '65%'
         }
     });
-    
+
     // Performance Chart
     const performanceCtx = document.getElementById('performanceChart').getContext('2d');
     const performanceChart = new Chart(performanceCtx, {
@@ -184,7 +197,7 @@ window.addEventListener('load', function() {
             }
         }
     });
-    
+
     // CPA Chart
     const cpaCtx = document.getElementById('cpaChart').getContext('2d');
     const cpaChart = new Chart(cpaCtx, {

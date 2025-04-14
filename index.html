@@ -11,24 +11,46 @@
 <body class="min-h-screen">
     <!-- Navigation Bar -->
     <nav class="fixed w-full top-0 z-50 dark-gradient px-6 py-3 shadow-lg">
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between gap-4">
             <div class="flex items-center space-x-2">
                 <div class="w-10 h-10 rounded-lg primary-gradient flex items-center justify-center">
                     <i class="fas fa-store text-white text-xl"></i>
                 </div>
-                <span class="text-xl font-bold">TurnkeyPropPro</span>
+                <span class="text-xl font-bold hidden sm:inline">TurnkeyPropPro</span>
             </div>
-            <div class="flex items-center space-x-6">
-                <a href="#" class="text-gray-300 hover:text-white transition-colors">Dashboard</a>
-                <a href="#" class="text-gray-300 hover:text-white transition-colors">Campaigns</a>
-                <a href="#" class="text-gray-300 hover:text-white transition-colors">Analytics</a>
-                <a href="#" class="text-gray-300 hover:text-white transition-colors">Settings</a>
-                <div class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center">
+            <div class="header_menu ml-auto">
+                <div class="flex items-center justify-between lg:hidden mb-6">
+                    <div class="w-10 h-10 rounded-lg primary-gradient flex items-center justify-center">
+                        <i class="fas fa-store text-white text-xl"></i>
+                    </div>
+
+                    <button class="w-8 h-8 border rounded-lg toggle_menu" type="button">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col lg:flex-row items-center gap-4 lg:gap-6">
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors">Dashboard</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors">Campaigns</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors">Analytics</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors">Settings</a>
+                </div>
+            </div>
+
+            
+            <div class="flex items-center gap-3">
+                <a class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center relative" href="#">
                     <span class="font-semibold">JB</span>
+                    <!-- <img class="absolute top-0 left-0 w-full h-full object-cover rounded-full" src="https://media.istockphoto.com/id/1300972574/photo/millennial-male-team-leader-organize-virtual-workshop-with-employees-online.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=uP9rKidKETywVil0dbvg_vAKyv2wjXMwWJDNPHzc_Ug=" alt="John"> -->
+                </a>
+                <div class="lg:hidden">
+                    <button class="w-8 h-8 border rounded-lg toggle_menu" type="button">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
+    <div id="backdrop" class="toggle_menu"></div>
 
     <!-- Header Section -->
     <header class="pt-24 pb-12 relative overflow-hidden">
