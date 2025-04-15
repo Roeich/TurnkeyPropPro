@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
- :root {
+:root {
     --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #7e22ce 100%);
     --secondary-gradient: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
     --accent-gradient: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
@@ -18,19 +18,35 @@ body {
 .main{
     max-width: 100vw;
     overflow: hidden;
+    padding-top: 80px;
+}
+.glass-effect {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
 }
 .web3-card {
     background: rgba(30, 41, 59, 0.7);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
 .web3-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+            transform: translateY(-5px);
+    -webkit-box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
 .gradient-text {
@@ -57,12 +73,15 @@ body {
 }
 
 .glow {
-    box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+    -webkit-box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+            box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
 }
 
 .tooltip-content {
     visibility: hidden;
     opacity: 0;
+    -webkit-transition: opacity 0.3s, visibility 0.3s;
+    -o-transition: opacity 0.3s, visibility 0.3s;
     transition: opacity 0.3s, visibility 0.3s;
 }
 
@@ -92,13 +111,16 @@ body {
     position: absolute;
     z-index: 10;
     width: 200px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
 .sms-thread {
     background: rgba(15, 23, 42, 0.6);
     border-radius: 24px;
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -128,31 +150,61 @@ body {
 }
 
 .pulse {
-    animation: pulse 2s infinite;
+    -webkit-animation: pulse 2s infinite;
+            animation: pulse 2s infinite;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 rgba(126, 34, 206, 0.7);
+                box-shadow: 0 0 0 0 rgba(126, 34, 206, 0.7);
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 10px rgba(126, 34, 206, 0);
+                box-shadow: 0 0 0 10px rgba(126, 34, 206, 0);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(126, 34, 206, 0);
+                box-shadow: 0 0 0 0 rgba(126, 34, 206, 0);
+    }
 }
 
 @keyframes pulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(126, 34, 206, 0.7);
+        -webkit-box-shadow: 0 0 0 0 rgba(126, 34, 206, 0.7);
+                box-shadow: 0 0 0 0 rgba(126, 34, 206, 0.7);
     }
     70% {
-        box-shadow: 0 0 0 10px rgba(126, 34, 206, 0);
+        -webkit-box-shadow: 0 0 0 10px rgba(126, 34, 206, 0);
+                box-shadow: 0 0 0 10px rgba(126, 34, 206, 0);
     }
     100% {
-        box-shadow: 0 0 0 0 rgba(126, 34, 206, 0);
+        -webkit-box-shadow: 0 0 0 0 rgba(126, 34, 206, 0);
+                box-shadow: 0 0 0 0 rgba(126, 34, 206, 0);
     }
 }
 
 .rotate-in {
-    animation: rotateIn 0.5s ease-out forwards;
+    -webkit-animation: rotateIn 0.5s ease-out forwards;
+            animation: rotateIn 0.5s ease-out forwards;
     opacity: 0;
-    transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg);
+            transform: rotateY(90deg);
+}
+
+@-webkit-keyframes rotateIn {
+    to {
+        opacity: 1;
+        -webkit-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+    }
 }
 
 @keyframes rotateIn {
     to {
         opacity: 1;
-        transform: rotateY(0deg);
+        -webkit-transform: rotateY(0deg);
+                transform: rotateY(0deg);
     }
 }
 
@@ -160,23 +212,32 @@ body {
 /* For the interactive elements */
 
 .insight-wrapper {
-    perspective: 1000px;
+    -webkit-perspective: 1000px;
+            perspective: 1000px;
     cursor: pointer;
 }
 
 .insight-card {
+    -webkit-transition: -webkit-transform 0.6s;
+    transition: -webkit-transform 0.6s;
+    -o-transition: transform 0.6s;
     transition: transform 0.6s;
-    transform-style: preserve-3d;
+    transition: transform 0.6s, -webkit-transform 0.6s;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
 }
 
 .insight-wrapper.flipped .insight-card {
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
 }
 
 .insight-front,
 .insight-back {
-    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
     position: absolute;
     top: 0;
     left: 0;
@@ -185,7 +246,8 @@ body {
 }
 
 .insight-back {
-    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
 }
 
 .metric-card {
@@ -200,8 +262,12 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
+    background: -webkit-gradient( linear, left top, right bottom, from(rgba(255, 255, 255, 0.2)), color-stop(80%, rgba(255, 255, 255, 0)));
+    background: -o-linear-gradient( top left, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 80%);
     background: linear-gradient( to bottom right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 80%);
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
     pointer-events: none;
 }
 
@@ -226,7 +292,9 @@ body {
     position: absolute;
     width: 2px;
     background: rgb(126, 34, 206);
-    transform-origin: top;
+    -webkit-transform-origin: top;
+        -ms-transform-origin: top;
+            transform-origin: top;
 }
 
 .flowchart-dot {
@@ -236,6 +304,15 @@ body {
     border-radius: 50%;
     background: rgb(126, 34, 206);
 }
+
+/*  */
+.min-w-8{
+    min-width: 2rem;
+}
+.min-w-10{
+    min-width: 2.5rem;
+}
+
 @media(min-width:1400px){
     .container{
         max-width: 1320px;
@@ -252,11 +329,17 @@ body {
         max-width: 100%;
         background: var(--dark-gradient);
         padding: 1rem;
-        transform: translateX(110%);
+        -webkit-transform: translateX(110%);
+            -ms-transform: translateX(110%);
+                transform: translateX(110%);
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
         transition: 0.3s;
     }
     .show__menu .header_menu{
-        transform: translateX(0%);
+        -webkit-transform: translateX(0%);
+            -ms-transform: translateX(0%);
+                transform: translateX(0%);
     }
     #backdrop{
         display: block;
@@ -267,10 +350,15 @@ body {
         right: 0px;
         bottom: 0px;
         opacity: 0;
-        background-color: rgba(0, 0, 0, 0.25);
+        background-color:rgba(0, 0, 0, 0.5);
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
         transition: 0.3s;
         pointer-events: none;
-        user-select: none;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
     }
     .show__menu #backdrop{
         opacity: 1;
@@ -282,6 +370,11 @@ body {
     .tooltip-content{
         left: initial !important;
         right: 0 !important;
+    }
+    nav.glass-effect{
+        background:var(--dark-gradient);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
     }
 }
 @media(max-width:575.98px){

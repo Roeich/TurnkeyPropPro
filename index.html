@@ -9,41 +9,50 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="min-h-screen">
-    <!-- Navigation Bar -->
-    <nav class="fixed w-full top-0 z-50 dark-gradient px-6 py-3 shadow-lg">
-        <div class="flex items-center justify-between gap-4">
-            <div class="flex items-center space-x-2">
+
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 z-50 w-full glass-effect py-3 px-4">
+        <div class="container mx-auto flex justify-between items-center gap-4">
+            <a class="flex items-center space-x-2" href="index.html">
                 <div class="w-10 h-10 rounded-lg primary-gradient flex items-center justify-center">
                     <i class="fas fa-store text-white text-xl"></i>
                 </div>
                 <span class="text-xl font-bold hidden sm:inline">TurnkeyPropPro</span>
-            </div>
-            <div class="header_menu ml-auto">
+            </a>
+            <div class="header_menu mr-auto">
                 <div class="flex items-center justify-between lg:hidden mb-6">
                     <div class="w-10 h-10 rounded-lg primary-gradient flex items-center justify-center">
                         <i class="fas fa-store text-white text-xl"></i>
                     </div>
 
-                    <button class="w-8 h-8 border rounded-lg toggle_menu" type="button">
+                    <button class="p-2 rounded-lg bg-white bg-opacity-10 text-white hover:bg-opacity-20 transition duration-300 min-w-10 toggle_menu" type="button">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
                 <div class="flex flex-col lg:flex-row items-center gap-4 lg:gap-6">
-                    <a href="#" class="text-gray-300 hover:text-white transition-colors">Dashboard</a>
-                    <a href="#" class="text-gray-300 hover:text-white transition-colors">Campaigns</a>
-                    <a href="#" class="text-gray-300 hover:text-white transition-colors">Analytics</a>
-                    <a href="#" class="text-gray-300 hover:text-white transition-colors">Settings</a>
+                    <a class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 haptic-feedback" href="dashboard.html">Dashboard</a>
+                    <a class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 haptic-feedback" href="lead.html">Leads</a>
+                    <a class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 haptic-feedback" href="campaigns.html">Campaigns</a>
+                    <a class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 haptic-feedback" href="reports.html">Reports</a>
+                    <a class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 haptic-feedback" href="settings.html">Settings</a>
                 </div>
             </div>
+            <div class="flex items-center gap-x-4">
+                <button class="haptic-feedback p-2 rounded-full bg-white bg-opacity-10 text-white hover:bg-opacity-20 transition duration-300 min-w-10">
+                    <i class="fas fa-bell text-sm"></i>
+                </button>
+                <div class="relative">
+                    <a class="haptic-feedback flex items-center space-x-2 p-2 rounded-lg bg-white bg-opacity-10 hover:bg-opacity-20 transition duration-300" href="login.html">
+                        <div class="w-8 min-w-8 h-8 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center text-white font-bold">
+                            JB
+                        </div>
+                        <span class="text-white hidden lg:block">John Blackburn</span>
+                        <i class="fas fa-chevron-down text-white text-opacity-50 text-xs"></i>
+                    </a>
+                </div>
 
-            
-            <div class="flex items-center gap-3">
-                <a class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center relative" href="#">
-                    <span class="font-semibold">JB</span>
-                    <!-- <img class="absolute top-0 left-0 w-full h-full object-cover rounded-full" src="https://media.istockphoto.com/id/1300972574/photo/millennial-male-team-leader-organize-virtual-workshop-with-employees-online.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=uP9rKidKETywVil0dbvg_vAKyv2wjXMwWJDNPHzc_Ug=" alt="John"> -->
-                </a>
                 <div class="lg:hidden">
-                    <button class="w-8 h-8 border rounded-lg toggle_menu" type="button">
+                    <button class="p-2 rounded-lg bg-white bg-opacity-10 text-white hover:bg-opacity-20 transition duration-300 min-w-10 toggle_menu" type="button">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
@@ -52,54 +61,56 @@
     </nav>
     <div id="backdrop" class="toggle_menu"></div>
 
-    <!-- Header Section -->
-    <header class="pt-24 pb-12 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full">
-            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-indigo-900/30 to-purple-900/30"></div>
-            <div class="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] animate-spin-slow" style="animation-duration: 60s; background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, rgba(15, 23, 42, 0) 70%);"></div>
-        </div>
-        
-        <div class="container px-4 md:px-6 mx-auto relative z-10">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Strategic SMS Marketing for <span class="gradient-text">Connecticut Homeowners</span></h1>
-            <p class="text-xl text-gray-300 mb-8 max-w-3xl">Leveraging Jefferson Fisher psychological principles and proven real estate entrepreneurial strategies to connect with motivated sellers.</p>
-            
-            <div class="flex flex-wrap gap-6">
-                <div class="web3-card p-4 flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full primary-gradient flex items-center justify-center">
-                        <i class="fas fa-bullseye text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold">47%</h3>
-                        <p class="text-sm text-gray-400">Higher Response Rate</p>
-                    </div>
-                </div>
-                
-                <div class="web3-card p-4 flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full secondary-gradient flex items-center justify-center">
-                        <i class="fas fa-dollar-sign text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold">$27K</h3>
-                        <p class="text-sm text-gray-400">Avg. Acquisition Discount</p>
-                    </div>
-                </div>
-                
-                <div class="web3-card p-4 flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full accent-gradient flex items-center justify-center">
-                        <i class="fas fa-clock text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold">18 Days</h3>
-                        <p class="text-sm text-gray-400">Avg. Time to Contract</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
+    
     <!-- Main Content -->
     <main class="main">
         <div class="container px-4 md:px-6 mx-auto">
+
+            <!-- hero Section -->
+            <div class="pt-10 pb-12 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-full">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-indigo-900/30 to-purple-900/30"></div>
+                    <div class="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] animate-spin-slow" style="animation-duration: 60s; background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, rgba(15, 23, 42, 0) 70%);"></div>
+                </div>
+                
+                <div class="relative z-10">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Strategic SMS Marketing for <span class="gradient-text">Connecticut Homeowners</span></h1>
+                    <p class="text-xl text-gray-300 mb-8 max-w-3xl">Leveraging Jefferson Fisher psychological principles and proven real estate entrepreneurial strategies to connect with motivated sellers.</p>
+                    
+                    <div class="flex flex-wrap gap-6">
+                        <div class="web3-card p-4 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full primary-gradient flex items-center justify-center">
+                                <i class="fas fa-bullseye text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">47%</h3>
+                                <p class="text-sm text-gray-400">Higher Response Rate</p>
+                            </div>
+                        </div>
+                        
+                        <div class="web3-card p-4 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full secondary-gradient flex items-center justify-center">
+                                <i class="fas fa-dollar-sign text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">$27K</h3>
+                                <p class="text-sm text-gray-400">Avg. Acquisition Discount</p>
+                            </div>
+                        </div>
+                        
+                        <div class="web3-card p-4 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full accent-gradient flex items-center justify-center">
+                                <i class="fas fa-clock text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">18 Days</h3>
+                                <p class="text-sm text-gray-400">Avg. Time to Contract</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Jefferson Fisher Principles Section -->
             <section class="mb-20">
                 <div class="web3-card p-4 sm:p-8 relative overflow-hidden">
@@ -1068,6 +1079,7 @@
     <!-- Scripts -->
     <script data-cfasync="false" src="assets/js/email-decode.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 </html>

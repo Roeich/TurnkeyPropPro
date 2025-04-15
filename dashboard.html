@@ -8,83 +8,64 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
 </head>
-<body class="gradient-dark min-h-screen">
-    <!-- Login Container -->
-    <div id="login-container" class="flex justify-center items-center min-h-screen">
-        <div class="glass-effect rounded-xl p-8 w-full max-w-md card-3d-effect">
-            <div class="text-center mb-8">
-                <h1 class="text-3xl font-bold text-white mb-1">TurnkeyPropPro</h1>
-                <p class="text-white opacity-70">Lead Generation & Marketing System</p>
+<body class="min-h-screen">
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 z-50 w-full glass-effect py-3 px-4">
+        <div class="container mx-auto flex justify-between items-center gap-4">
+            <a class="flex items-center space-x-2" href="index.html">
+                <div class="w-10 h-10 rounded-lg primary-gradient flex items-center justify-center">
+                    <i class="fas fa-store text-white text-xl"></i>
+                </div>
+                <span class="text-xl font-bold hidden sm:inline">TurnkeyPropPro</span>
+            </a>
+            <div class="header_menu mr-auto">
+                <div class="flex items-center justify-between lg:hidden mb-6">
+                    <div class="w-10 h-10 rounded-lg primary-gradient flex items-center justify-center">
+                        <i class="fas fa-store text-white text-xl"></i>
+                    </div>
+
+                    <button class="p-2 rounded-lg bg-white bg-opacity-10 text-white hover:bg-opacity-20 transition duration-300 min-w-10 toggle_menu" type="button">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col lg:flex-row items-center gap-4 lg:gap-6">
+                    <a class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 haptic-feedback" href="dashboard.html">Dashboard</a>
+                    <a class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 haptic-feedback" href="lead.html">Leads</a>
+                    <a class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 haptic-feedback" href="campaigns.html">Campaigns</a>
+                    <a class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 haptic-feedback" href="reports.html">Reports</a>
+                    <a class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 haptic-feedback" href="settings.html">Settings</a>
+                </div>
             </div>
-            
-            <div class="mb-6">
-                <label class="block text-white text-sm font-bold mb-2" for="phone">
-                    Phone Number (10 digits, no hyphens)
-                </label>
-                <input id="phone" type="text" class="haptic-feedback w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 text-white border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-40 transition duration-300" placeholder="Enter your phone number">
-                <p id="phone-error" class="text-red-400 text-xs mt-1 hidden">Please enter a 10-digit phone number without hyphens.</p>
-            </div>
-            
-            <div class="mb-8">
-                <label class="block text-white text-sm font-bold mb-2" for="password">
-                    Password
-                </label>
-                <input id="password" type="password" class="haptic-feedback w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 text-white border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-40 transition duration-300" placeholder="password">
-                <p id="password-error" class="text-red-400 text-xs mt-1 hidden">The password is incorrect.</p>
-            </div>
-            
-            <button id="login-button" class="haptic-feedback w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-lg transition duration-300 hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                Log In
-            </button>
-            
-            <p class="text-white text-opacity-50 text-center mt-6 text-sm">
-                Need help? Contact our support team.
-            </p>
-            
-            <div id="login-loader" class="mt-4 hidden">
-                <div class="loader"></div>
-                <p class="text-white text-center mt-2">Logging in...</p>
+            <div class="flex items-center gap-x-4">
+                <button class="haptic-feedback p-2 rounded-full bg-white bg-opacity-10 text-white hover:bg-opacity-20 transition duration-300 min-w-10">
+                    <i class="fas fa-bell text-sm"></i>
+                </button>
+                <div class="relative">
+                    <a class="haptic-feedback flex items-center space-x-2 p-2 rounded-lg bg-white bg-opacity-10 hover:bg-opacity-20 transition duration-300" href="login.html">
+                        <div class="w-8 min-w-8 h-8 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center text-white font-bold">
+                            JB
+                        </div>
+                        <span class="text-white hidden lg:block">John Blackburn</span>
+                        <i class="fas fa-chevron-down text-white text-opacity-50 text-xs"></i>
+                    </a>
+                </div>
+
+                <div class="lg:hidden">
+                    <button class="p-2 rounded-lg bg-white bg-opacity-10 text-white hover:bg-opacity-20 transition duration-300 min-w-10 toggle_menu" type="button">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
+    </nav>
+    <div id="backdrop" class="toggle_menu"></div>
 
     <!-- Dashboard Container -->
-    <div id="dashboard-container" class="min-h-screen">
-        <!-- Top Navigation -->
-        <nav class="glass-effect p-4">
-            <div class="container mx-auto flex justify-between items-center">
-                <div class="flex items-center">
-                    <h1 class="text-2xl font-bold text-white mr-8">TurnkeyPropPro</h1>
-                    <div class="hidden md:flex space-x-6">
-                        <a href="#" class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 haptic-feedback">Dashboard</a>
-                        <a href="#" class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 haptic-feedback">Leads</a>
-                        <a href="#" class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 haptic-feedback">Campaigns</a>
-                        <a href="#" class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 haptic-feedback">Reports</a>
-                        <a href="#" class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 haptic-feedback">Settings</a>
-                    </div>
-                </div>
-                
-                <div class="flex items-center space-x-4">
-                    <button class="haptic-feedback p-2 rounded-full bg-white bg-opacity-10 text-white hover:bg-opacity-20 transition duration-300">
-                        <i class="fas fa-bell text-sm"></i>
-                    </button>
-                    <div class="relative">
-                        <button class="haptic-feedback flex items-center space-x-2 p-2 rounded-lg bg-white bg-opacity-10 hover:bg-opacity-20 transition duration-300">
-                            <div class="w-8 h-8 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center text-white font-bold">
-                                JB
-                            </div>
-                            <span class="text-white hidden md:block">John Blackburn</span>
-                            <i class="fas fa-chevron-down text-white text-opacity-50 text-xs"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        
+    <main class="main">
         <!-- Main Content -->
         <div class="container mx-auto p-4">
             <!-- Dashboard Header -->
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-8">
                 <div>
                     <h2 class="text-3xl font-bold text-white">Dashboard Overview</h2>
                     <p class="text-white text-opacity-70">Welcome back, John. Here's what's happening with your leads.</p>
@@ -264,7 +245,7 @@
             
             <!-- SMS Campaign Performance -->
             <div class="glass-effect rounded-xl p-5 mb-8 card-3d-effect neumorphic">
-                <div class="flex justify-between items-center mb-6">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3 mb-6">
                     <h4 class="text-lg font-bold text-white">SMS Campaign Performance</h4>
                     <div class="flex items-center space-x-3">
                         <button class="haptic-feedback px-3 py-1 rounded-lg bg-white bg-opacity-10 text-white text-sm hover:bg-opacity-20 transition duration-300">Day</button>
@@ -307,7 +288,7 @@
             
             <!-- Facebook Groups & Social Media -->
             <div class="glass-effect rounded-xl p-5 mb-8 card-3d-effect neumorphic">
-                <div class="flex justify-between items-center mb-6">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3 mb-6">
                     <h4 class="text-lg font-bold text-white">Facebook Groups & Social Media</h4>
                     <button class="haptic-feedback px-4 py-2 rounded-lg gradient-primary text-white transition duration-300">
                         <i class="fas fa-plus mr-2"></i> New Campaign
@@ -467,7 +448,7 @@
             
             <!-- Marketing Materials & Assets -->
             <div class="glass-effect rounded-xl p-5 mb-8 card-3d-effect neumorphic">
-                <div class="flex justify-between items-center mb-6">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3 mb-6">
                     <h4 class="text-lg font-bold text-white">TurnkeyPropPro Marketing Materials</h4>
                     <button class="haptic-feedback px-4 py-2 rounded-lg gradient-primary text-white transition duration-300">
                         <i class="fas fa-plus mr-2"></i> New Material
@@ -487,7 +468,7 @@
                             <p class="text-white text-opacity-70 text-sm mb-3">Complete guide to turnkey properties</p>
                             <div class="flex justify-between items-center">
                                 <span class="text-white text-opacity-70 text-xs">Downloaded: 243 times</span>
-                                <button class="haptic-feedback p-2 rounded-lg bg-white bg-opacity-10 text-white hover:bg-opacity-20 transition duration-300">
+                                <button class="haptic-feedback p-2 rounded-lg bg-white bg-opacity-10 text-white hover:bg-opacity-20 transition duration-300 min-w-10">
                                     <i class="fas fa-download text-sm"></i>
                                 </button>
                             </div>
@@ -506,7 +487,7 @@
                             <p class="text-white text-opacity-70 text-sm mb-3">Video showcase of available properties</p>
                             <div class="flex justify-between items-center">
                                 <span class="text-white text-opacity-70 text-xs">Viewed: 1,892 times</span>
-                                <button class="haptic-feedback p-2 rounded-lg bg-white bg-opacity-10 text-white hover:bg-opacity-20 transition duration-300">
+                                <button class="haptic-feedback p-2 rounded-lg bg-white bg-opacity-10 text-white hover:bg-opacity-20 transition duration-300 min-w-10">
                                     <i class="fas fa-play text-sm"></i>
                                 </button>
                             </div>
@@ -525,7 +506,7 @@
                             <p class="text-white text-opacity-70 text-sm mb-3">Interactive investment return calculator</p>
                             <div class="flex justify-between items-center">
                                 <span class="text-white text-opacity-70 text-xs">Used: 758 times</span>
-                                <button class="haptic-feedback p-2 rounded-lg bg-white bg-opacity-10 text-white hover:bg-opacity-20 transition duration-300">
+                                <button class="haptic-feedback p-2 rounded-lg bg-white bg-opacity-10 text-white hover:bg-opacity-20 transition duration-300 min-w-10">
                                     <i class="fas fa-external-link-alt text-sm"></i>
                                 </button>
                             </div>
@@ -544,7 +525,7 @@
                             <p class="text-white text-opacity-70 text-sm mb-3">Ready-to-use social media content</p>
                             <div class="flex justify-between items-center">
                                 <span class="text-white text-opacity-70 text-xs">Downloaded: 156 times</span>
-                                <button class="haptic-feedback p-2 rounded-lg bg-white bg-opacity-10 text-white hover:bg-opacity-20 transition duration-300">
+                                <button class="haptic-feedback p-2 rounded-lg bg-white bg-opacity-10 text-white hover:bg-opacity-20 transition duration-300 min-w-10">
                                     <i class="fas fa-download text-sm"></i>
                                 </button>
                             </div>
@@ -564,59 +545,59 @@
                 </button>
             </div>
         </div>
-        
-        <!-- Footer -->
-        <footer class="glass-effect p-6">
-            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-                <div class="text-white text-opacity-70 text-sm mb-4 md:mb-0">
-                    &copy; 2025 Main Street Opportunity. All rights reserved.
-                </div>
-                
-                <div class="flex space-x-6">
-                    <a href="#" class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 text-sm">Terms of Service</a>
-                    <a href="#" class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 text-sm">Privacy Policy</a>
-                    <a href="#" class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 text-sm">Contact Support</a>
-                </div>
+    </main>
+    <!-- Footer -->
+    <footer class="glass-effect p-6">
+        <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center gap-4">
+            <div class="text-white text-opacity-70 text-sm mb-4 md:mb-0">
+                &copy; 2025 Main Street Opportunity. All rights reserved.
             </div>
-        </footer>
-    </div>
-    
-    <!-- Chat Widget Toggle -->
-    <button id="chat-toggle" class="haptic-feedback fixed bottom-6 right-6 w-14 h-14 rounded-full gradient-primary flex items-center justify-center text-white shadow-lg z-50">
-        <i class="fas fa-comment-alt"></i>
-    </button>
+            
+            <div class="flex flex-col sm:flex-row gap-x-6 gap-y-4 items-center">
+                <a href="#" class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 text-sm">Terms of Service</a>
+                <a href="#" class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 text-sm">Privacy Policy</a>
+                <a href="#" class="text-white text-opacity-70 hover:text-opacity-100 transition duration-300 text-sm">Contact Support</a>
+            </div>
+        </div>
+    </footer>
     
     <!-- Chat Widget -->
-    <div id="chat-widget" class="chat-container glass-effect rounded-xl overflow-hidden">
-        <div class="p-4 gradient-primary">
-            <div class="flex justify-between items-center">
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="chatToggle" class="w-16 h-16 rounded-full accent-gradient flex items-center justify-center shadow-lg">
+            <i class="fas fa-comment-alt text-white text-xl"></i>
+        </button>
+        
+        <div id="chatWidget" class="hidden absolute bottom-20 right-0 w-80 web3-card overflow-hidden">
+            <div class="primary-gradient p-4">
                 <div class="flex items-center">
-                    <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center mr-3">
-                        <span class="text-purple-600 font-bold">A</span>
+                    <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-indigo-600 mr-3">
+                        <i class="fas fa-robot"></i>
                     </div>
                     <div>
-                        <h4 class="text-white font-bold">Alli</h4>
-                        <p class="text-white text-opacity-70 text-xs">Digital Assistant</p>
+                        <h3 class="font-semibold">Ask Alli</h3>
+                        <p class="text-xs text-indigo-200">Your digital assistant</p>
                     </div>
                 </div>
-                <button id="close-chat" class="text-white">
-                    <i class="fas fa-times"></i>
-                </button>
             </div>
-        </div>
-        
-        <div id="chat-messages" class="chat-messages p-4 bg-opacity-20">
-            <div class="chat-message bot">
-                <p>Hi, I'm Alli, your digital assistant. How can I help you with your lead generation and marketing today?</p>
+            
+            <div class="bg-gray-900 h-80 overflow-y-auto p-4" id="chatMessages">
+                <div class="flex mb-3">
+                    <div class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white flex-shrink-0 mr-2">
+                        <i class="fas fa-robot text-xs"></i>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-3 max-w-[80%]">
+                        <p class="text-sm">Hi there! I'm Alli, your digital assistant. How can I help you with Connecticut homeowner targeting or SMS strategies today?</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        
-        <div class="p-4 border-t border-white border-opacity-10">
-            <div class="flex">
-                <input id="chat-input" type="text" class="flex-1 px-4 py-2 rounded-l-lg bg-white bg-opacity-10 text-white border-0 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-40" placeholder="Type your message...">
-                <button id="send-message" class="haptic-feedback px-4 py-2 rounded-r-lg gradient-primary text-white">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
+            
+            <div class="p-3 border-t border-gray-800 bg-gray-900">
+                <div class="flex">
+                    <input type="text" id="chatInput" placeholder="Type your question..." class="bg-gray-800 text-white text-sm rounded-l-lg px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                    <button id="sendMessage" class="primary-gradient px-4 rounded-r-lg">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -625,6 +606,7 @@
     <!-- scripts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
+    <script src="assets/js/common.js"></script> 
     <script src="assets/js/dashboard.js"></script> 
 </body>
 </html>

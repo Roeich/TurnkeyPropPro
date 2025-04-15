@@ -1,43 +1,3 @@
-// Login Validation
-document.getElementById('login-button').addEventListener('click', function() {
-    const phoneInput = document.getElementById('phone');
-    const passwordInput = document.getElementById('password');
-    const phoneError = document.getElementById('phone-error');
-    const passwordError = document.getElementById('password-error');
-    const loginLoader = document.getElementById('login-loader');
-    
-    // Reset error messages
-    phoneError.classList.add('hidden');
-    passwordError.classList.add('hidden');
-    
-    // Validate phone number
-    const phoneRegex = /^\d{10}$/;
-    let isValid = true;
-    
-    if (!phoneRegex.test(phoneInput.value)) {
-        phoneError.classList.remove('hidden');
-        isValid = false;
-    }
-    
-    if (passwordInput.value !== 'password') {
-        passwordError.classList.remove('hidden');
-        isValid = false;
-    }
-    
-    if (isValid) {
-        // Show loader
-        loginLoader.classList.remove('hidden');
-        
-        // Simulate login delay
-        setTimeout(function() {
-            document.getElementById('login-container').style.display = 'none';
-            document.getElementById('dashboard-container').style.display = 'block';
-            
-            // Initialize charts after dashboard is visible
-            initCharts();
-        }, 1500);
-    }
-});
 
 // Simulated haptic feedback
 document.querySelectorAll('.haptic-feedback').forEach(item => {
@@ -48,67 +8,7 @@ document.querySelectorAll('.haptic-feedback').forEach(item => {
     });
 });
 
-// Chat Widget Toggle
-document.getElementById('chat-toggle').addEventListener('click', function() {
-    document.getElementById('chat-widget').style.display = 'block';
-});
 
-document.getElementById('close-chat').addEventListener('click', function() {
-    document.getElementById('chat-widget').style.display = 'none';
-});
-
-// Chat Functionality
-document.getElementById('send-message').addEventListener('click', sendChatMessage);
-document.getElementById('chat-input').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        sendChatMessage();
-    }
-});
-
-function sendChatMessage() {
-    const chatInput = document.getElementById('chat-input');
-    const chatMessages = document.getElementById('chat-messages');
-    const message = chatInput.value.trim();
-    
-    if (message) {
-        // Add user message
-        const userMessageDiv = document.createElement('div');
-        userMessageDiv.className = 'chat-message user';
-        userMessageDiv.innerHTML = `<p>${message}</p>`;
-        chatMessages.appendChild(userMessageDiv);
-        chatInput.value = '';
-        
-        // Scroll to bottom
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-        
-        // Simulate AI response after a brief delay
-        setTimeout(function() {
-            const botMessageDiv = document.createElement('div');
-            botMessageDiv.className = 'chat-message bot';
-            
-            // Predefined responses based on keywords
-            let response = "I'm not sure I understand. Could you please clarify or ask about lead generation, marketing campaigns, or your dashboard metrics?";
-            
-            if (message.toLowerCase().includes('lead')) {
-                response = "Your current lead generation is performing well with a 12.5% increase from last week. Would you like to explore specific lead sources or ways to improve conversion rates?";
-            } else if (message.toLowerCase().includes('facebook') || message.toLowerCase().includes('social')) {
-                response = "Your Facebook Groups campaigns are generating strong engagement. The 'Property Investment Club' group has your highest conversion rate at 22.8%. Would you like me to suggest optimization strategies?";
-            } else if (message.toLowerCase().includes('sms') || message.toLowerCase().includes('text') || message.toLowerCase().includes('message')) {
-                response = "Your SMS campaigns have a 97.8% delivery rate and 31.5% response rate. That's 2.1% lower than last week. I recommend testing new message templates for the 'New Lead' stage.";
-            } else if (message.toLowerCase().includes('report') || message.toLowerCase().includes('data')) {
-                response = "I can generate a custom report for you. Would you like to see data on lead sources, conversion rates, or marketing ROI?";
-            } else if (message.toLowerCase().includes('help') || message.toLowerCase().includes('support')) {
-                response = "I'm here to help! You can ask me about lead generation, campaign performance, marketing strategies, or system features. What specific information do you need?";
-            }
-            
-            botMessageDiv.innerHTML = `<p>${response}</p>`;
-            chatMessages.appendChild(botMessageDiv);
-            
-            // Scroll to bottom again
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }, 1000);
-    }
-}
 
 // Initialize Charts
 function initCharts() {
@@ -318,3 +218,4 @@ function initCharts() {
     createGaugeChart('openRateGauge', 89.3, 'rgba(54, 185, 204, 0.8)');
     createGaugeChart('responseRateGauge', 31.5, 'rgba(246, 194, 62, 0.8)');
 }
+initCharts();
